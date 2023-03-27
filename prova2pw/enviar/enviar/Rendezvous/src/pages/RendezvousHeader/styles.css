@@ -1,0 +1,36 @@
+#header{
+    background-color:darkslategrey;
+    height: 150px;
+    padding: 1px;
+}
+
+#header .h1 {
+    color: whitesmoke;
+}
+#header .h3 {
+    color: whitesmoke;
+}
+
+#links {
+    display: flex;
+    gap: 1em;
+}
+
+#links .navigate {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+#linkSolo1 {
+    gap: 1em;
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+}
+#linkSolo2 {
+    gap: 1em;
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+}
