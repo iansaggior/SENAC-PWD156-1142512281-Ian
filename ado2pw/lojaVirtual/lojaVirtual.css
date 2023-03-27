@@ -1,0 +1,16 @@
+body{
+    font-family: cursive;
+    background: linear-gradient(to right, rgb(105, 94, 6),rgb(76, 1, 1));
+    color:beige;
+}
+#pai{
+    text-align: center;
+    position:absolute;
+    top: 16%;
+    left: 34%; 
+    padding-bottom: 1px;
+    background: linear-gradient(to right, rgb(215, 15, 15),rgb(244, 240, 10));
+    font-size:larger;
+    border-radius: 50px;
+    width: 500px;
+}

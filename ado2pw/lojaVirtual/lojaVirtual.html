@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Virtual</title>
+    <h1> Loja virtual</h1>
+    <link href="/lojaVirtual.css" rel="stylesheet">
+    <script src="/lojaVirtual.js"></script>
+</head>
+<body>
+    <div id="pai">
+        <h2>Bem vindo a Loja Virtual</h2>
+        <form onsubmit="buscarProdutos(event)">
+            <label for="produtos">Nome do produto</label>
+            <select name="produtos" id="produtos">
+                <option value="produto A" >produto A</option>
+                <option value="produto B" >produto B</option>
+                <option value="produto C" >produto C</option>
+                <option value="produto D">produto D</option>
+                <option value="produto E" >produto E</option>
+            </select><br/><br/>
+            <label for="quantidade">Quantidade</label>
+            <input type="number" id="quantidade" min="1" max="999" placeholder="Ex: 200"/><br/><br/>
+            <input type="submit" id="buscar" value="Calcular"/>
+        </form>
+        <h2 id="resultado1"></h2>
+        <h2 id="resultado2"></h2>
+        <h2 id="resultado3"></h2>
+    </div>
+</body>
+</html>

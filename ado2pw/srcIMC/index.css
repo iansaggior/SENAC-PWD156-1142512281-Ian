@@ -1,0 +1,15 @@
+.container{
+  position: absolute;
+  left: 34%;
+  top:10%;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  background: linear-gradient(to right, rgb(13, 60, 214),rgb(42, 133, 252));
+  font-size:larger;
+  border-radius: 30px;
+  width: 400px;
+}
+body{
+  text-align: center;
+  background-color: aquamarine;
+}
