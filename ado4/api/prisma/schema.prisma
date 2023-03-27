@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  idUser Int @id @default(autoincrement())
+  nmUser String
+  password String
+  profile String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @updatedAt
+  user Comanda[] @relation
+
+  @@map("users")
+}
+
+model Comanda {
+  user User @relation(fields: [idUser], references: [idUser])
+  idComanda Int @id @default(autoincrement())
+  numeroMesa String 
+  status String
+  draft String
+  idUser Int
+  comanda ItemComanda[] @relation("comanda")
+
+  @@map("comanda")
+}
+
+model ItemComanda {
+  comanda Comanda @relation("comanda", fields: [idComanda], references: [idComanda])
+  idComanda Int
+  produto Produto @relation("produto", fields: [idProduto], references: [idProduto])
+  idProduto Int
+  quantidade Int
+
+  @@id([idComanda, idProduto])
+
+  @@map("itemComanda")
+}
+
+model Produto {
+  categoria Categoria @relation("categoria", fields: [idCategoria], references: [idCategoria])
+  idProduto Int @id @default(autoincrement())
+  idCategoria Int
+  nmProduto String
+  preco String
+  descProduto String
+  imgProduto String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @updatedAt
+  produto ItemComanda[] @relation("produto")
+
+  @@map("produto")
+}
+
+model Categoria {
+  idCategoria Int @id @default(autoincrement())
+  nmCategoria String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @updatedAt
+  categoria Produto[] @relation("categoria")
+
+  @@map("categoria")
+}
